@@ -1,0 +1,25 @@
+{
+  "name": "tacc-csv-to-qualtrics",
+  "version": "1.0.0",
+  "description": "A utility to create Qualtrics CSV for import from existing data CSV",
+  "main": "index.js",
+  "devDependencies": {
+    "csvtojson": "^2.0.10",
+    "mustache": "^3.2.0",
+    "nps": "^5.9.12",
+    "shx": "^0.3.2"
+  },
+  "// scripts": {
+    "start": "Allow running `scripts` via `nps …` from `package-scripts.yml`",
+    "prebuild": "Delete then create output directory",
+    "build": "Convert data",
+    "postbuild": "Export final data file, then run cleanup tasks"
+  },
+  "scripts": {
+    "start": "nps",
+    "prebuild": "nps setup",
+    "build": "nps build",
+    "postbuild": "nps clean report"
+  },
+  "license": "UNLICENSED"
+}

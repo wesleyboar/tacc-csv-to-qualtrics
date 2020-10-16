@@ -1,0 +1,40 @@
+scripts:
+  # Delete then create output directory
+  setup: rm -rf ./dist && shx mkdir -p ./dist
+
+  # Build temporary partial templates, then build final markup
+  build: nps build:json build:csv
+
+  # Build temporary data from source data
+    # FAQ:     Prefix temporary data with underscore, to identify them
+    #          as temporary (also, add underscore pattern to `.gitignore`)
+    # Via `csvtojson` convert data from `.csv` to `.json`
+  build:json: >-
+    csvtojson
+    --noheader=false
+    --headers='[
+      "FirstName",
+      "LastName",
+      "Institution",
+      "Department",
+      "StreetPoBox",
+      "AddressLine2",
+      "City",
+      "StateProvince",
+      "ZipCode",
+      "Email"
+    ]'
+    assets/data.csv > assets/_data.json
+
+  # Build final data
+    # Edit data and apply into template, then ouput to… (`….js ….mustache >`)
+    # Final data file (`….csv`)
+  build:csv: >-
+    mustache
+    ./bin/manipulate-json.js ./templates/data.mustache >
+    ./dist/data.csv
+
+  report: echo "Use CSV in './dist/'"
+
+  # Delete temporary files
+  clean: rm ./assets/_*.*
