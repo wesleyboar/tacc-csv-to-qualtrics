@@ -1,8 +1,8 @@
-# TACC Website EPIC Tables
+# CSV to Qualtrics
 
-This project compiles data into templates to create markup for the body of the [EPIC Presenetations & Publications Page][epic-prespub].
+This project converts internal CSV data into a format for [Qualtrics "Texascale Magazine Subscription" contact list][ts-qualtrics-contacts].
 
-[epic-prespub]: https://www.tacc.utexas.edu/epic/research/presentations-and-publications "TACC: EPIC: Research: Presenetations & Publications Page"
+[ts-qualtrics-contacts]: https://utexas.ca1.qualtrics.com/Q/PanelsSection?ContextLibraryID=GR_0iGxpsbtndfkf8V
 
 ## Usage
 
