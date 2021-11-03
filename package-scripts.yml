@@ -17,12 +17,14 @@ scripts:
       "LastName",
       "Institution",
       "Department",
-      "StreetPoBox",
+      "StreetAddressPoBox",
       "AddressLine2",
       "City",
       "StateProvince",
-      "ZipCode",
-      "Email"
+      "PostalCode",
+      "Country",
+      "Email",
+      "Title"
     ]'
     assets/data.csv > assets/_data.json
 
